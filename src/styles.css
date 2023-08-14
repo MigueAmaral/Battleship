@@ -1,0 +1,419 @@
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgba(240, 248, 255, 0.754);
+}
+
+body {
+  background: linear-gradient(348deg, #d33d6b, #153589);
+  height: 100vh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 4rem;
+  pointer-events: none;
+}
+
+.material-symbols-outlined.small {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 2rem;
+  color: #d50e0e;
+}
+
+.material-symbols-outlined.transparent {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 4rem;
+  opacity: 0.3;
+}
+
+.material-symbols-outlined.small.transparent {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 2rem;
+  color: white;
+}
+
+.gifContainer {
+  margin-top: 80px;
+  margin-left: 30px;
+}
+
+.gif {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.gameTitle {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  font-style: italic;
+  color: aliceblue;
+  text-decoration: underline;
+}
+
+.turnIndicator {
+  font-size: 1.3rem;
+  color: rgb(148, 205, 255);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.gameContainer {
+  margin-inline: 30px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+
+.gameHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.alerts {
+  height: 50px;
+}
+
+.shipDisplay {
+  opacity: 0;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.shipDisplay p {
+  margin: 0;
+  text-align: center;
+  border: 1px dotted lightgray;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+}
+
+.shipDisplay button {
+  margin: 0;
+  text-align: center;
+  border: 1px dotted lightgray;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  background-color: rgba(234, 160, 0, 0.712);
+  color: rgba(240, 248, 255, 0.754);
+  font-weight: 700;
+}
+
+.shipDisplay button:active {
+  background-color: #d50e0e;
+}
+
+
+.shipDisplayHide {
+  opacity: 0;
+}
+
+.gameboards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(2, 300px);
+  gap: 50px;
+}
+
+.squarePlayer {
+    box-shadow: 2px 2px 2px darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.squareComp {
+  border: 1px solid rgba(169, 169, 169, 0.774);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.squareHide {
+  background-color: rgba(255, 158, 23, 0) !important;
+}
+
+.playerBoard {
+  background-color: rgba(0, 169, 169, 0.723);
+  grid-column: 1/3;
+  grid-row: 1/3;
+  border: 5px inset darkgray;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.compBoard {
+  background-color: rgba(255, 159, 23, 0.84);
+  border: 3px inset darkgray;
+  display: grid;
+  grid-template-columns: repeat(10, 29px);
+  grid-template-rows: repeat(10,29px);
+}
+
+.gameTray {
+  margin: 0;
+  padding: 0;
+  border: 2px outset darkgray;
+  background-color: rgba(211, 211, 211, 0.623);
+}
+
+.trayShips {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(5, 1fr);
+  margin: 10px;
+  height: 250px;
+  width: 280px;
+}
+
+.trayRotated {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carrier {
+  width: 250px;
+  height: 30px;
+}
+
+.carrierC {
+  background-color: rgb(174, 0, 0);
+  transition: all 150ms ease-in-out;
+}
+
+.carrierR {
+  width: 30px;
+  height: 250px;
+}
+
+.battleship {
+  width: 200px;
+  height: 30px;
+}
+
+.battleshipC {
+  background-color: rgb(0, 0, 137);
+  transition: all 150ms ease-in-out;
+}
+
+.battleshipR {
+  width: 30px;
+  height: 200px;
+}
+
+.destroyer {
+  width: 150px;
+  height: 30px;
+}
+
+.destroyerC {
+  background-color: rgb(0, 106, 0);
+  transition: all 150ms ease-in-out;
+}
+
+.destroyerR {
+  width: 30px;
+  height: 150px;
+}
+
+.submarine {
+  width: 150px;
+  height: 30px;
+}
+
+.submarineC {
+  background-color: rgb(120, 74, 56);
+  transition: all 150ms ease-in-out;
+}
+
+.submarineR {
+  width: 30px;
+  height: 150px;
+}
+
+.patrol {
+  width: 100px;
+  height: 30px;
+}
+
+.patrolC {
+  background-color: rgb(120, 46, 176);
+  transition: all 150ms ease-in-out;
+}
+
+.patrolR {
+  width: 30px;
+  height: 100px;
+}
+
+.shipRemoved {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.trayName {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: rgb(53, 53, 53);
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.trayName h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: aliceblue;
+}
+
+.trayName button {
+  border: none;
+  margin-block: 5px;
+}
+
+.trayName button:first-of-type{
+  border: 2px solid rgb(37, 51, 103);
+  background-color: rgb(199, 199, 199);
+  color: rgb(42, 42, 42);
+}
+
+
+.trayName button:first-of-type:active{
+  background-color: rgb(37, 51, 103);
+  color: aliceblue;
+}
+
+.trayName button:nth-of-type(2) {
+  background-color: rgb(74, 88, 138);
+  color: aliceblue;
+  border-radius: 10px;
+  border: 1px solid rgb(179, 219, 255);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+
+.trayName button:nth-of-type(2):active {
+  background-color: rgb(134, 0, 0);
+}
+
+.trayName button:last-of-type{
+  border-radius: 10px;
+  margin-right: -10px;
+  margin-left: 20px;
+  background-color: #d33d6b;
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+
+.trayName button:last-of-type:active{
+  background-color: #009783;
+}
+
+.hit {
+  filter: grayscale(60%);
+}
+
+.hover {
+  background-color: #d50e0e5b;
+}
+
+.enemyHover {
+  background-color: #d50e0e9f !important;
+}
+
+.sinked {
+  filter: grayscale(60%);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #1f6246e9;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  padding-left: 50px;
+  border: 5px solid #1e5041;
+  border-radius: 20px;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content h1 {
+  font-style: italic;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.modal-content ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  gap: 5px;
+}
+
+.modal-content li {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

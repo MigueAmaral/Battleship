@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="playerWins">
+          <h1 class="title">Player Wins</h1>
+          <ol class="playerLeaderboard">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+        <div class="computerWins">
+          <h1 class="title">Computer Wins</h1>
+          <ol class="computerLeaderboard">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <h1 class="gameTitle">BATTLESHIP</h1>
+    <div class="gameContainer">
+      <div class="gameHeader">
+        <p class="turnIndicator">waiting tactics...press start</p>
+        <h3 class="alerts"></h3>
+        <div class="shipDisplay">
+          <p class="alertcarrier">CARRIER</p>
+          <p class="alertbattleship">BATTLESHIP</p>
+          <p class="alertdestroyer">DESTROYER</p>
+          <p class="alertsubmarine">SUBMARINE</p>
+          <p class="alertpatrol">PATROL</p>
+          <button class="deploy">CONFIRM</button>
+        </div>
+        <div class="gifContainer"><img src="" alt="" class="gif" /></div>
+      </div>
+      <div class="gameboards">
+        <div class="playerBoard"></div>
+        <div class="compBoard"></div>
+        <div class="gameTray">
+          <div class="trayName">
+            <h3>TRAY</h3>
+            <button class="reset">reset</button>
+            <button class="flip">FLIP</button>
+            <button class="start">START</button>
+          </div>
+          <div class="trayShips">
+            <div
+              class="carrier carrierC trayShip"
+              draggable="true"
+              id="carrier"
+            ></div>
+            <div
+              class="battleship battleshipC trayShip"
+              draggable="true"
+              id="battleship"
+            ></div>
+            <div
+              class="destroyer destroyerC trayShip"
+              draggable="true"
+              id="destroyer"
+            ></div>
+            <div
+              class="submarine submarineC trayShip"
+              draggable="true"
+              id="submarine"
+            ></div>
+            <div
+              class="patrol patrolC trayShip"
+              draggable="true"
+              id="patrol"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script defer src="bundle.js"></script></body>
+</html>
